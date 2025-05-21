@@ -9,6 +9,10 @@ from bson import ObjectId  # Import ObjectId for conversion
 import os
 from dotenv import load_dotenv
 
+from flask_cors import CORS
+
+
+
 # Load environment variables from .env file
 load_dotenv()
 MONGODB_URI = os.getenv("MONGODB_URI")
@@ -23,6 +27,7 @@ products_collection = db["products"]
 
 # Flask API
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/recommend/<user_id>", methods=["POST"])
 def recommend(user_id):
