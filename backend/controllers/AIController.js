@@ -5,7 +5,7 @@ import axios from "axios";
 const popular = ("/get-popular-dishes", async (req, res) => {
     try {
         
-        const response = await axios.get("http://127.0.0.1:5000/popular-dishes");
+        const response = await axios.get(`${proccess.env.RECOMMENTATION_URL}/popular-dishes`);
         res.json(response.data);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch popular dishes" });
@@ -16,7 +16,7 @@ const popular = ("/get-popular-dishes", async (req, res) => {
 const recommendations = ("/get-recommendations", async (req, res) => {
     try {
         const{userId} = req.body
-        const response = await axios.post(`http://127.0.0.1:5000/recommend/${userId}`, req.body);
+        const response = await axios.post(`${proccess.env.RECOMMENTATION_URL}/recommend/${userId}`, req.body);
         res.json(response.data);
     } catch (error) {
         res.status(500).json({ error: "Error fetching recommendations" });
