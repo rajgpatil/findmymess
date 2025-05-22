@@ -187,7 +187,7 @@ const verifyRazorpay = async(req,res)=>{
 //All orders data for admin panel
 const allOrders = async(req,res)=>{
     try{
-        await orderModel.deleteOne({payment: false});
+        await orderModel.deleteOne({payment: false,paymentMethod: { $ne: 'COD' }});
         const orders = await orderModel.find({})
         res.json({success:true,orders})
     }
