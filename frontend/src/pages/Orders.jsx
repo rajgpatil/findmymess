@@ -60,7 +60,7 @@ const Order = () => {
                                     <p className='sm:text-base font-medium'>{item.name}</p>
                                     <div className='flex items-center gap-3 mt-2 text-base text-gray-700'>
                                         <p className='text-lg'>{currency}{item.size === "Full" ? item.fullprice : item.halfprice}</p>
-                                        <p>Quantity:item.quantity</p>
+                                        <p>Quantity:{item.quantity}</p>
                                         <p>Size: {item.size}</p>
                                     </div>
                                     <p className='mt-1'>Date: <span className='text-gray-400'>{new Date(item.date).toDateString()}</span></p>
