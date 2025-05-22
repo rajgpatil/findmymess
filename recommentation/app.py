@@ -16,7 +16,6 @@ from flask_cors import CORS
 # Load environment variables from .env file
 load_dotenv()
 MONGODB_URI = os.getenv("MONGODB_URI")
-# MONGODB_URI = "mongodb+srv://patilraj2472003:elO2Rt4Gnrc28x3O@cluster0.rqv1m.mongodb.net"
 
 # Connect to MongoDB
 client = MongoClient(MONGODB_URI)
