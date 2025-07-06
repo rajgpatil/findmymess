@@ -31,7 +31,7 @@ In urban areas, many students and working professionals struggle to find afforda
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React.js, HTML, CSS, JavaScript
 - **Backend**: Node.js, Express.js
