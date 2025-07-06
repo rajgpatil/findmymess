@@ -46,7 +46,7 @@ In urban areas, many students and working professionals struggle to find afforda
 ## Installation
 
 1. **Clone the repository**
-
+```bash
 git clone https://github.com/yourusername/findmymess.git
 
 2.Install dependencies
