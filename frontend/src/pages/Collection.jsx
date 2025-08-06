@@ -21,10 +21,10 @@ const Collection = () => {
     //for toggle in specific product category
     const toggleCategory = (e) =>{
         if(category.includes(e.target.value)){
-            setCategory(prev => prev.filter(item => item !== e.target.value))
+            setCategory(prev => prev.filter(item => item !== e.target.value))//If it's already included:Remove that value from the category list.
         }
         else{
-            setCategory(prev => [...prev,e.target.value])
+            setCategory(prev => [...prev,e.target.value]) // If it’s not included: Add the value to the list.
         }
     }
 

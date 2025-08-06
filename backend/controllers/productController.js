@@ -13,6 +13,7 @@ const addProduct = async(req,res)=>{
 
         const images = [image1,image2,image3,image4].filter((item)=> item !== undefined)
 
+        //wait for all promises to be resolved or any one to be rejected
         let imagesUrl = await Promise.all(
             images.map(async (item)=>{
                 let result = await cloudinary.uploader.upload(item.path,{resource_type:'image'})

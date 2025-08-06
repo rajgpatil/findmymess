@@ -10,6 +10,7 @@ const Recommendation = () => {
     const fetchRecommendations = async () => {
         try {
             const response = await axios.post(backendUrl + "/api/ai/get-recommendations",{},{ headers: { token } });
+          
             setRecommendations(response.data.recommendations || []);
             
         } catch (error) {

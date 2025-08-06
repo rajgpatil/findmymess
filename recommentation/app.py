@@ -74,12 +74,15 @@ def recommend(user_id):
         dish["_id"] = str(dish["_id"])  
 
     recommended_dishes_sorted = sorted(recommended_dishes, key=lambda x: recommended_dish_names.index(x["name"]))
+    # print("User dishes:", user_dishes)
+    print("Recommended dish names:", recommended_dishes_sorted)
 
     return jsonify({"recommendations": recommended_dishes_sorted[:3]})
 
 @app.route("/popular-dishes", methods=["GET"])
 def get_popular_dishes():
     # Fetch all orders from MongoDB
+    print("Fetching orders from MongoDB...")
     orders = list(orders_collection.find({}, {"_id": 0, "items": 1}))
 
     # Extract dish names

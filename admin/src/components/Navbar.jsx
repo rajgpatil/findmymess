@@ -1,10 +1,11 @@
 import React from 'react'
 import {assets} from "../assets/assets.js"
+import { frontendUrl } from '../App.jsx';
 const Navbar = ({setToken}) =>{
 
     //go to user home page
     const user_homepage = ()=>{
-        window.location.href = 'http://localhost:5173/';
+        window.location.href = frontendUrl;
     }
     return(
         

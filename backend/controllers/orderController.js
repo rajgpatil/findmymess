@@ -174,7 +174,7 @@ const verifyRazorpay = async(req,res)=>{
             res.json({success: true, message: "Payment Successful"})
         }
         else{
-           
+           await orderModel.deleteOne({ _id: orderInfo.receipt, payment: false, paymentMethod: { $ne: 'COD' } });
             res.json({success:false, message:'Payment Failed'})
         }
     }
@@ -187,7 +187,8 @@ const verifyRazorpay = async(req,res)=>{
 //All orders data for admin panel
 const allOrders = async(req,res)=>{
     try{
-        await orderModel.deleteOne({payment: false,paymentMethod: { $ne: 'COD' }});
+
+        await orderModel.deleteMany({payment: false,paymentMethod: { $ne: 'COD' }});
         const orders = await orderModel.find({})
         res.json({success:true,orders})
     }

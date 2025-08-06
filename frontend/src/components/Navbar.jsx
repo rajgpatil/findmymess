@@ -30,7 +30,7 @@ const Navbar = () => {
     }
     // go to admin portal
     const admin = ()=>{
-        window.location.href = 'http://localhost:5174/';
+        window.location.href = import.meta.env.VITE_ADMIN_URL;
     }
     return(
         <div className='flex items-center justify-between py-5 font-medium'>
@@ -103,6 +103,7 @@ const Navbar = () => {
                         <NavLink onClick = {()=>setVisible(false)} className = 'py-2 pl-6 border' to = '/about'>ABOUT</NavLink>
                         <NavLink onClick = {()=>setVisible(false)} className = 'py-2 pl-6 border' to = '/contact'>CONTACT</NavLink>
                         <NavLink onClick = {()=>setVisible(false)} className = 'py-2 pl-6 border' to = '/recommendation'>RECOMMENDED</NavLink>
+                        <p onClick={admin} className='py-2 pl-6 border cursor-pointer'>ADMIN</p>
                     </div>
                 </div>
         </div>
