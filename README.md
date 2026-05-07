@@ -39,7 +39,6 @@ In urban areas, many students and working professionals struggle to find afforda
 - **AI Recommendation**: Python (Flask) using Cosine Similarity
 - **Payments**: Stripe, Razorpay
 - **Version Control**: Git, GitHub
-- **Deployment**: Netlify / Render / Heroku
 
 ---
 
